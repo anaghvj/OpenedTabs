@@ -140,14 +140,7 @@ function main(){
 	  copyToClipboard();
 
 	  }
-function saveBgImage(){
-var url = document.getElementById("bgDiv").style.backgroundImage;
-var url1 = url.replace('url(','').replace(')','');
-chrome.downloads.download({url:url1,saveAs:true},
-                                             function(id) {
-      });
 
-};
 	  //Trick to copy contents to Clipboard.
 	 //copies the <p> to the textarea and then initialize copy to clipboard 
 function copyToClipboard() {
