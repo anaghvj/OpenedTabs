@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "OpenedTabs",
+  "description": "This extension Shows and Copy all Opened tabs in the Google Chrome Window.",
+  "version": "1.2",
+  
+  "icons": { 
+  "48": "icon_48.png" 
+},
+
+  "permissions": [
+    "tabs",
+	"notifications",
+	"clipboardWrite",
+	"notifications"
+	"downloads"
+  ],
+  
+  "web_accessible_resources": [
+    "icon_48.png"
+  ],
+  
+  "browser_action": {
+    "default_icon": "favicon.png",
+    "default_popup": "tablist.html"
+  }
+  
+}
