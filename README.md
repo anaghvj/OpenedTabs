@@ -17,16 +17,18 @@ Works well in  Windows,Linux,Mac.
 
 Copied Text Example :
 ```
-------
+
+-----------
+Facebook
+URL : https://www.facebook.com/
+-----------
+
+-----------
 Google
 URL : https://www.google.co.in/
-------
+-----------
 
 
-------
-(7) Facebook
-URL : https://www.facebook.com/
-------
 ```
 ================
 
