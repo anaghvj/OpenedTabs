@@ -1,5 +1,5 @@
 ##OpenedTabs 
-- (by anaghvj)
+`by anaghvj`
 ==========
 ##Introduction
 
@@ -16,22 +16,36 @@ Works well in  Windows,Linux,Mac.
 =================
 
 Copied Text Example :
----
-
-
--Google
+```
+------
+Google
 URL : https://www.google.co.in/
+------
 
 
-
--(7) Facebook
+------
+(7) Facebook
 URL : https://www.facebook.com/
----
+------
+```
 ================
+
+##Installation STEPS
+
+- [Download](https://github.com/anaghvj/bootstrap/archive/master.zip) `master.zip`.
+- Extract the [master.zip](https://github.com/anaghvj/bootstrap/archive/master.zip) `master.zip` to a specific location using suitable opener.
+- Open [Extensions Manager](chrome://extensions) `chrome://extensions/`in <b>Google Chrome</b>.
+- Check the `Developer mode`.
+- Click on `Load unpacked extention...`.
+- Point the Load extension dialog to the extracted  folder of previusly downloaded `master.zip` downloaded and extracted in first and second Step Respectively.
+- kAbOOm... YOU ARE dONE. JUST CLICK ON THE `Ot` icon apperaring on the right side of the Screen.
+- NOTE: To use the extension in <b>Incognito</b> window you have to `enable` `Allow in incognito` Checkbox.
+ 
+
 
 
 ##Feedback
-[anaghvj@gmail.com]
-{anaghvj@gmail.com}
-'anaghvj@gmail.com'
-(anaghvj@gmail.com)
+CONTACT US @
+[Anaghvj](anaghvj@gmail.com)
+
+`anaghvj@gmail.com`
