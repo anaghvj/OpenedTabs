@@ -7,6 +7,10 @@ OpenedTabs is a Chrome Extension  which shows the list of all opened tabs in the
 
 It increses the user Productivity and enhance his/her work. The Extention Copies the list of all opened tabs to the  local clipboard in a single click.
 
+So that you can save a ton tabs all at once in your File, Email, IM Chat, etc. without any Panic,with Less Effort
+
+Shows all Opened tabs in the current Google Chrome Window with their details like URL,Title,TAB ID,webpage Icon and Status.
+
 The Extention also allows the user to "Reload" and "Close" the tabs of the current window without moving to tab.
 
 User can use the copied text from the clipboard for their personel use,save in a text file,in Email,sending links to friends and family.
