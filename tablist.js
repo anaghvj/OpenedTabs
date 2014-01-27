@@ -43,12 +43,7 @@ function myFunction(tabid,favIcon,tabname,tablink,tabstatus) {
 
 		var docfrag = document.createDocumentFragment();
 
-		// Create a simple text notification:
-		var notification = webkitNotifications.createNotification(
-			favIcon,//'icon_48.png',  // icon url - can be relative
-			'OpenedTabs | Tab Closed',  // notification title
-			'Tab Name : '+TabName+'\nUrl : '+tablink+' \nis Closed.' // notification body text
-);
+
 
         var TabName = document.createElement("LI");
       // now using fragment insted of separe elemets    //urlList.appendChild(TabName);
@@ -72,27 +67,31 @@ function myFunction(tabid,favIcon,tabname,tablink,tabstatus) {
 		var TabStatus = document.createElement("DD");
         //urlList.appendChild(TabStatus);
 		       docfrag.appendChild(TabStatus);
+			   TabStatus.setAttribute("id","tbstatus");
 		TabStatus.innerText="Status : "+tabstatus;
 
 		var TabID = document.createElement("DD");
         //urlList.appendChild(TabID);
 		docfrag.appendChild(TabID);
 		TabID.innerText="TAB ID : "+tabid;
+		TabID.setAttribute("id","tbid");
+		
 
 		var bReload = document.createElement("BUTTON");
+		bReload.setAttribute("id","btnReload");
 		urlList.appendChild(bReload);
 		docfrag.appendChild(bReload);
 		bReload.innerText="Refresh";
+	
 		bReload.addEventListener("click",function(){ 
-		
-												//chrome.tabs.reload(tabid);							
-											chrome.downloads.download({url:tablink,saveAs:true},
+					chrome.tabs.reload(tabid);							
+					/*chrome.downloads.download({url:tablink,saveAs:true},
                                              function(id) {
-      });
-											
-		});
+      });*/
+	  });
 
 		var bRemove = document.createElement("BUTTON");
+		bRemove.setAttribute("id","btnClose");
 		urlList.appendChild(bRemove);
 		docfrag.appendChild(bRemove);
 		bRemove.innerText="Close";
@@ -118,7 +117,13 @@ function myFunction(tabid,favIcon,tabname,tablink,tabstatus) {
 		urlList.appendChild(div);
 		var Line = document.createElement("hr");
 		urlList.appendChild(Line);
-
+		// Create a simple text notification: desktop and chrome
+		
+		var notification = webkitNotifications.createNotification(
+			favIcon,//'icon_48.png',  // icon url - can be relative
+			'OpenedTabs | Tab Closed',  // notification title
+			'Tab Name : '+tabname+'\nUrl : '+tablink+' \nis Closed.' // notification body text
+);
 
       }
 
@@ -153,7 +158,7 @@ function copyToClipboard() {
 
 		obj.select();//selects the text in <p>
     document.execCommand("copy", false, null);//initialize the copy command which copy the data to clipboard in well format.
- alert("			All URLs Successfully Copied to CLIPBOARD!! :) \n		PASTE the Clipboard contents to FILE/E-mail.\n		Thanks For Using!(anaghvj)! :D ");
+ alert("\t\tAll URLs Successfully Copied to CLIPBOARD!! :) \n\n		PASTE the Clipboard contents to FILE/E-mail.\n\nThanks For Using!(anaghvj)! :D ");
  var r=confirm("			Close the extension?");
 if (r==true)
   {
