@@ -39,7 +39,7 @@ URL : https://www.google.co.in/
 ##Installation STEPS
 
 - [Download](https://github.com/anaghvj/OpenedTabs/archive/master.zip) `master.zip`.
-- Extract the [master.zip](https://github.com/anaghvj/bootstrap/archive/master.zip) `master.zip` to a specific location using suitable opener.
+- Extract the [master.zip](https://github.com/anaghvj/OpenedTabs/archive/master.zip) `master.zip` to a specific location using suitable opener.
 - Open [Extensions Manager](chrome://extensions) `chrome://extensions/`in <b>Google Chrome</b>.
 - Check the `Developer mode`.
 - Click on `Load unpacked extention...`.
