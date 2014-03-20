@@ -4,10 +4,22 @@ chrome.tabs.getAllInWindow(null, function(tabs) {
 		tabs.forEach(function(tab){
           //function to dispaly tabid,icon,title,url,and status of the tab.
 		  myFunction(tab.id,tab.favIconUrl,tab.title,tab.url,tab.status);  
+		  
 		  // used for formating the values for copy
 		  mfc(tab.url,tab.title);			  
         });
       });
+function reloadAll(){
+	chrome.tabs.getAllInWindow(null,function(tabs){
+	tabs.forEach(function(tab){
+	myFunction(tab.id)
+	{
+	chrome.tabs.reload(tabid);
+	console.log(tab.id+" Reloaded");
+	}
+	});
+	});
+	}
 	// used for formating the values for copy  
 function mfc(tburl,tbname)
 {
@@ -131,12 +143,14 @@ function myFunction(tabid,favIcon,tabname,tablink,tabstatus) {
 // adds event listenrs to the DOM Contents after load 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('button').addEventListener('click', clickHandler);
-  
+  doc
 });
 
 function clickHandler(e) {
   setTimeout(awesomeTask, 10);
 }
+
+
 function awesomeTask() {
  main();
 }
@@ -145,6 +159,7 @@ function main(){
 	  copyToClipboard();
 
 	  }
+	  
 
 	  //Trick to copy contents to Clipboard.
 	 //copies the <p> to the textarea and then initialize copy to clipboard 
