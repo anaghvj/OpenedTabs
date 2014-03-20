@@ -173,7 +173,7 @@ function copyToClipboard() {
 
 		obj.select();//selects the text in <p>
     document.execCommand("copy", false, null);//initialize the copy command which copy the data to clipboard in well format.
- alert("\t\tAll URLs Successfully Copied to CLIPBOARD!! :) \n\n		PASTE the Clipboard contents to FILE/E-mail.\n\nThanks For Using!(anaghvj)! :D ");
+ alert("\t\tAll URLs Successfully Copied to CLIPBOARD!! :) \n\n		PASTE the Clipboard contents to FILE/E-mail.\n\nThanks For Using!(From anaghvj)! :D ");
  var r=confirm("			Close the extension?");
 if (r==true)
   {
