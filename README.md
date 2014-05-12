@@ -35,6 +35,8 @@ URL : https://www.google.co.in/
 
 ```
 ================
+##Chrome WebStore Link
+-[Webstore Download link](https://chrome.google.com/webstore/detail/openedtabs/hgohfinkmbjghllknbjejeagkmckehif)
 
 ##Installation STEPS
 
