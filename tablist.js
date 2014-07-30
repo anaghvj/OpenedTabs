@@ -1,25 +1,14 @@
 // gets the current ativated window //loads all the opened tabs in activated window one by one
+var notId=0;
 chrome.tabs.getAllInWindow(null, function(tabs) {
         
 		tabs.forEach(function(tab){
           //function to dispaly tabid,icon,title,url,and status of the tab.
 		  myFunction(tab.id,tab.favIconUrl,tab.title,tab.url,tab.status);  
-		  
 		  // used for formating the values for copy
 		  mfc(tab.url,tab.title);			  
         });
       });
-function reloadAll(){
-	chrome.tabs.getAllInWindow(null,function(tabs){
-	tabs.forEach(function(tab){
-	myFunction(tab.id)
-	{
-	chrome.tabs.reload(tabid);
-	console.log(tab.id+" Reloaded");
-	}
-	});
-	});
-	}
 	// used for formating the values for copy  
 function mfc(tburl,tbname)
 {
@@ -51,7 +40,7 @@ function myFunction(tabid,favIcon,tabname,tablink,tabstatus) {
         console.log(tabid,favIcon,tabname,tablink,tabstatus);
 
 		var div =document.createElement("div");
-
+		div.setAttribute("id",tabid);
 
 		var docfrag = document.createDocumentFragment();
 
@@ -101,16 +90,34 @@ function myFunction(tabid,favIcon,tabname,tablink,tabstatus) {
                                              function(id) {
       });*/
 	  });
-
+	
 		var bRemove = document.createElement("BUTTON");
 		bRemove.setAttribute("id","btnClose");
 		urlList.appendChild(bRemove);
 		docfrag.appendChild(bRemove);
 		bRemove.innerText="Close";
 		bRemove.addEventListener("click",function(){
-		notification.show();
-											chrome.tabs.remove(tabid);		
-											});
+		var opt= {
+type:"basic",
+title:"Tab Closed | OpenedTabs",
+message:'Tab Name : '+tabname+'\nUrl : '+tablink+' \nis Closed.',
+iconUrl:favIcon
+}
+
+chrome.notifications.create("Id Deleted"+notId++,opt,creationCallback);
+//window.close();
+function creationCallback(notId){
+console.log("created notification ID:"+notId);
+}
+		
+		//notification;
+		//notification.show();
+		//chrome.tabs.remove(tabid);
+	document.getElementById(tabid).remove();		
+			
+	chrome.tabs.remove(tabid);
+			
+										});
 
 		//Closes the particular tab
 		//Use for loop for activating this feature
@@ -124,33 +131,39 @@ function myFunction(tabid,favIcon,tabname,tablink,tabstatus) {
 		//CloseTab.addEventListener("click", function() {chrome.tabs.remove(tabId);});
 
 		//CloseTab.onclick = chrome.tabs.remove(this.tabid); //closeTabs(tabIds);//chrome.tabs.remove(tabId);
-		div.id="tab";
+		div.id=tabid;
 		div.appendChild(docfrag);
 		urlList.appendChild(div);
 		var Line = document.createElement("hr");
 		urlList.appendChild(Line);
 		// Create a simple text notification: desktop and chrome
 		
-		var notification = webkitNotifications.createNotification(
-			favIcon,//'icon_48.png',  // icon url - can be relative
-			'OpenedTabs | Tab Closed',  // notification title
-			'Tab Name : '+tabname+'\nUrl : '+tablink+' \nis Closed.' // notification body text
-);
-
+		// var notification = webkitNotifications.createNotification(
+			// favIcon,//'icon_48.png',  // icon url - can be relative
+			// 'OpenedTabs | Tab Closed',  // notification title
+			// 'Tab Name : '+tabname+'\nUrl : '+tablink+' \nis Closed.' // notification body text
+// );
+// var opt= {
+// type:"basic",
+// title:"Tab Closed | OpenedTabs",
+// message:'Tab Name : '+tabname+'\nUrl : '+tablink+' \nis Closed.'
+// iconUrl:favIcon}
+// var notification = chrome.notifications.create(notId++,opt,creationCallback);
+// function creationCallback)(notId){
+// console.log("created notification ID:"+notId);
+// }
       }
 
 
 // adds event listenrs to the DOM Contents after load 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('button').addEventListener('click', clickHandler);
-  doc
+  
 });
 
 function clickHandler(e) {
   setTimeout(awesomeTask, 10);
 }
-
-
 function awesomeTask() {
  main();
 }
@@ -159,7 +172,6 @@ function main(){
 	  copyToClipboard();
 
 	  }
-	  
 
 	  //Trick to copy contents to Clipboard.
 	 //copies the <p> to the textarea and then initialize copy to clipboard 
@@ -173,7 +185,7 @@ function copyToClipboard() {
 
 		obj.select();//selects the text in <p>
     document.execCommand("copy", false, null);//initialize the copy command which copy the data to clipboard in well format.
- alert("\t\tAll URLs Successfully Copied to CLIPBOARD!! :) \n\n		PASTE the Clipboard contents to FILE/E-mail.\n\nThanks For Using!(From anaghvj)! :D ");
+ alert("\t\tAll URLs Successfully Copied to CLIPBOARD!! :) \n\n		PASTE the Clipboard contents to FILE/E-mail.\n\nThanks For Using!(anaghvj)! :D ");
  var r=confirm("			Close the extension?");
 if (r==true)
   {
