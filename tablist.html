@@ -1,43 +1,55 @@
 <!DOCTYPE HTML>
 <!--
- * Copyright (c) 2013 anaghvj. All rights reserved. 
- 
--->
+ * Copyright (c) 2013-2020 anaghvj. All rights reserved. -->
 <html>
-  <head>
-  <link href="/style.css" rel="stylesheet" type="text/css">
-  
-	
-    <title>Opened Tabs </title>
-</head>
-  <body>
-  <script type="text/javascript" src="tablist.js"></script>
-    
-	<center>
-	<div1><b><u>Google Chrome</u> :<Var> Opened Tabs URL List Copier</var></b></div1></center>
-	
-	
-	<Center><br><dfn>Click <b>"Copy To ClipBoard"</b> to save the URL list to the ClipBoard.</dfn><br><p>Developer '#anaghvj' under Open Source Licence "{ AVJLabs!}" <br>For feedback mail us "<em>anaghvj@gmail.com</em>"<br>Find Source  <a href="https://github.com/anaghvj/OpenedTabs" target="_blank" style="text-decoration: none;"><img id="gitcat" src="/Images/Github_Icon.png">@ github.com/anaghvj/OpenedTabs </a></p>
-	
-	<button class="copyclip"><img id="copy" src="/Images/icon_copy.png"></img>Copy To ClipBoard
-	
-	</button>
-	
-	</center>
-	<ol ID = urlList>
-	</ol>
-	
-	
-	
-	
-	<hr>
 
-	<center><p><em><i>Copy Below Text to a File or Email !<br> Thanks For Using</i></em></p>
-	</center>
-	<div id="clip"><p ID ="tblist" >
-	
-	</p></div>
-	
-	<textarea id="copy1" value="" rows ="14" cols="88"> </textarea>
-  </body>
+	<head>
+		<link href="/style.css" rel="stylesheet" type="text/css">
+		<title>Opened Tabs</title>
+	</head>
+
+	<body>
+		<div id="inline">
+			<div id="header">
+				<b>Opened Tabs URL List Copier</b>
+			</div>
+			<div id="content">
+				<button id="button">Copy To ClipBoard
+					<!-- <img id="copy" src="/Images/icon_copy.png"></img> -->
+					<!-- class="copyclip" -->
+				</button>
+			</div>
+			<div id="div">
+				<ol id=urlList>
+				</ol>
+			</div>
+			<hr>
+			<div id="hidden">
+				<div>
+					<p><em><i>Copy Below Text to a File or Email !<br> Thanks For Using</i></em></p>
+				</div>
+				<div id="clip">
+					<p id="tblist">
+					</p>
+				</div>
+
+				<textarea id="copy1" value="" rows="14" cols="88"> </textarea>
+			</div>
+			<div id="footer">
+				<div>
+					<p>Click <b>"Copy To ClipBoard"</b> to save the URL list to the ClipBoard.</p>
+				</div>
+				<br>
+				<div>
+					<p>Developer '#anaghvj' under Open Source Licence "{ AVJLabs }" <br>For feedback mail us
+						"<em>anaghvj@gmail.com</em>"<br>Find Source <a href="https://github.com/anaghvj/OpenedTabs"
+							target="_blank" style="text-decoration: none;"><img id="gitcat"
+								src="/Images/Github_Icon.png">@
+							github.com/anaghvj/OpenedTabs </a></p>
+				</div>
+			</div>
+			<script type="text/javascript" src="tablist.js"></script>
+		</div>
+	</body>
+
 </html>

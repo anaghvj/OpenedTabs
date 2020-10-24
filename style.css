@@ -1,162 +1,243 @@
-@font-face
-{
-font-family: Roboto-Regular;
-src: url(Roboto-Regular.ttf);
-}
- body {
-		font-family:Roboto-Regular;
-        min-width: 357px;
-        overflow-x: hidden;
-		padding-top: 23px;
-		background-color: #F5F5F5;
-      }
-
-      img {
-        margin: 4px;
-        border: 0px solid black;
-        vertical-align: middle;
-        width: 40px;
-        height: 40px;
-		max-width:50px;
-		position:relative;
-		top:44px;
-		right:14px;
-		
-      }
-	  
-	  div1 {
-
-			z-index: 100;
-			position: fixed;
-			right: 115px;
-			top: 0px;
-			border:1px solid #E2E2E2;
-			padding:9px 51px; 
-			background:#ffffff;
-			width:57%;
-			border-radius:1px;
-			box-shadow: 2px 2px 1px #888888;
-			
-}
-div{
-			border:1px Solid #E6E3E3;
-			padding:1px 28px; 
-			background:#ffffff;
-			border-radius:1px;
-			box-shadow: 2px 2px 3px #D6D3D3;
-			
+@font-face {
+	font-family: Roboto-Regular;
+	src: url(Roboto-Regular.ttf);
 }
 
-div:hover{ background-color:#E1F0E2; } 
+body {
+	font-family: Roboto-Regular;
+	min-width: 357px;
+	overflow-x: hidden;
+	padding-top: 23px;
+	background-color: #F5F5F5;
+}
 
-	p {
-		border: 1px solid #E0DEDE;
-border-radius: 1px;
-		padding:10px 9px;
-		word-wrap:break-word;
-		white-space:nowrap; 
-		overflow:hidden; 
-		text-overflow:ellipsis;
-	}
+img {
+	margin: 4px;
+	border: 0px solid black;
+	vertical-align: middle;
+	width: 40px;
+	height: 40px;
+	max-width: 50px;
+	position: relative;
+	top: 44px;
+	right: 14px;
 
-	dd{
-		position:relative;
-		top:-17px;
-		right:7px;
-		overflow:hidden;
-	}
-	#btnClose{
-		background-image: url(Images/icon_close.png
-		);
-background-size: 30px;
-background-position-x: 5px;
-background-position-y: 2px;
-padding-left: 40px;
-background-repeat: no-repeat;
+}
+
+#hidden {
+	/* visibility: hidden;
+	display: none; */
+}
+
+#inline {
+	display: inline;
+}
+
+#header {
+	display: flex;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	z-index: 100;
+	top: 0px;
+	text-align: center;
+	border: 1px solid #E2E2E2;
+	padding: 12px 60px;
+	background: #ffffff;
+	border-radius: 1px;
+	box-shadow: 2px 2px 1px #888888;
+
+}
+
+#content {
+	justify-content: center;
+	display: flex;
+	padding: 20px;
+}
+
+#footer {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	text-align: center;
+	border: 1px solid #E2E2E2;
+	padding: 12px 60px;
+	background: #ffffff;
+	border-radius: 1px;
+	box-shadow: 2px 2px 1px #888888;
+}
+
+#div {
+	border: 1px Solid #E6E3E3;
+	padding: 1px 28px;
+	background: #ffffff;
+	border-radius: 1px;
+	box-shadow: 2px 2px 3px #D6D3D3;
+
+}
+
+.div {
+	border: 1px Solid #E6E3E3;
+	padding: 1px 28px;
+	background: #ffffff;
+	border-radius: 1px;
+	box-shadow: 2px 2px 3px #D6D3D3;
+
+}
+
+#div:hover {
+	background-color: #E1F0E2;
+}
+
+.div:hover {
+	background-color: #E1F0E2;
+}
+
+p {
+	border: 1px solid #E0DEDE;
+	border-radius: 1px;
+	padding: 10px 9px;
+	word-wrap: break-word;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+dd {
+	position: relative;
+	top: -17px;
+	right: 7px;
+	overflow: hidden;
+}
+
+#btnClose {
+	background-image: url(Images/icon_close.png
+);
+	background-size: 20px;
+	background-position-x: 5px;
+	background-position-y: 2.5px;
+	padding-left: 40px;
+	background-repeat: no-repeat;
 	outline: none;
-border: none;
-background-color:  #C5EC60;
-text-transform: uppercase;
-position: relative;
-letter-spacing: 1px;
-font-size: 1em;
-line-height: 2;
-font-family: sans-serif;
-top: -20px;
-left: 58px;
+	border: none;
+	background-color: #C5EC60;
+	text-transform: uppercase;
+	position: relative;
+	letter-spacing: 1px;
+	font-size: 1em;
+	line-height: 2;
+	font-family: sans-serif;
+	top: -20px;
+	left: 58px;
 }
-#gitcat{
-top: -3px;
-left: -2px;
+
+#button {
+	background-color: #4CAF50;
+	/* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
 }
-#btnimg{
-top: -22px;
-left: 88px;
-z-index: 1;}
-	#btnReload{
+
+#button:hover {
+	background-color: rgba(76, 175, 79, 0.822);
+}
+
+#gitcat {
+	top: -3px;
+	left: -2px;
+}
+
+#btnimg {
+	top: -22px;
+	left: 88px;
+	z-index: 1;
+}
+
+#btnReload {
 	background-image: url(Images/icon_reload.png);
-background-size: 30px;
-background-position-x: 5px;
-background-position-y: 2px;
-padding-left: 40px;
-background-repeat: no-repeat;
+	background-size: 20px;
+	background-position-x: 5px;
+	background-position-y: 2.5px;
+	padding-left: 40px;
+	background-repeat: no-repeat;
 	outline: none;
-border: none;
-background-color: #0099ff;
-text-transform: uppercase;
-position: relative;
-top: -20px;
-left: 43px;
-letter-spacing: 1px;
-font-size: 1em;
-line-height: 2;
-font-family: sans-serif;
-}
-	#tbstatus{text-transform: uppercase;
-position: relative;
-top: -25px;
-right: -4px;
-}
-#tbid{text-transform: uppercase;
-position: relative;
-top: -24px;
-right: -5px;
-}
-#copy{
-top: initial;
-}
-	a{text-decoration: none;}
-	li{
-		position:relative;
-		top:29px;
-		right:-8px;
-	}
-
-	textarea{
-			position:relative;
-			top:45px;
-			right:1056px;
-		}
-		
-		ol{
-			position:relative;
-			right:25px;
-		}
-		
-.copyclip{position: relative;
-    display: inline-block;
-    padding: 0 60px;
-    outline: none;
-    border: none;
-    background: #1d9650;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 1em;
-    line-height: 4;
-	font-family: initial;}		
-
-
+	border: none;
+	background-color: #0099ff;
+	text-transform: uppercase;
+	position: relative;
+	top: -20px;
+	left: 43px;
+	letter-spacing: 1px;
+	font-size: 1em;
+	line-height: 2;
+	font-family: sans-serif;
 }
 
+#tbstatus {
+	text-transform: uppercase;
+	position: relative;
+	top: -25px;
+	right: -4px;
+}
 
+#tbid {
+	text-transform: uppercase;
+	position: relative;
+	top: -24px;
+	right: -5px;
+}
+
+#copy {
+	top: initial;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	position: relative;
+	top: 29px;
+	right: -8px;
+}
+
+textarea {
+	position: relative;
+	top: 45px;
+	right: 1056px;
+}
+
+ol {
+	position: relative;
+	right: 25px;
+}
+
+.copyclip {
+	position: relative;
+	display: inline-block;
+	padding: 0 60px;
+	outline: none;
+	border: none;
+	background: #1d9650;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 1em;
+	line-height: 4;
+	font-family: initial;
+}
