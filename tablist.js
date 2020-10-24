@@ -1,11 +1,21 @@
 // gets the current ativated window
 //loads all the opened tabs in activated window one by one
 var notId = 0;
+var jsonParentObj = {
+  opened_tabs: [],
+};
 chrome.tabs.getAllInWindow(null, function (tabs) {
   tabs.forEach(function (tab) {
     showTabs(tab.id, tab.favIconUrl, tab.title, tab.url, tab.status);
     formatDataForCopy(tab.url, tab.title);
   });
+  //console.log(JSON.stringify(jsonParentObj));
+  var par = document.createDocumentFragment();
+  var data = document.createElement("p");
+  data.innerText = JSON.stringify(jsonParentObj, null, "\t");
+
+  par.appendChild(data);
+  document.getElementById("tbListJson").appendChild(par);
 });
 
 // used for formating the values for copy
@@ -29,11 +39,17 @@ function formatDataForCopy(tburl, tbname) {
   div1.appendChild(docfrag1);
   //used for appending fragmnet to the div element i.e. <div><dd/>.<dd/>.</div>
   tblist.appendChild(div1);
+
+  var jsobj = new Object();
+  jsobj.tab_name = tbname;
+  jsobj.url = tburl;
+  jsonParentObj.opened_tabs.push(jsobj);
+  //console.log(JSON.stringify(jsobj));
 }
 
 //function display information about the opend tabs in the window
 function showTabs(tabid, favIcon, tabname, tablink, tabstatus) {
-  console.log(tabid, favIcon, tabname, tablink, tabstatus);
+  //console.log(tabid, favIcon, tabname, tablink, tabstatus);
   var div = document.createElement("div");
   div.setAttribute("id", tabid);
   div.setAttribute("class", "div");
@@ -97,7 +113,7 @@ function showTabs(tabid, favIcon, tabname, tablink, tabstatus) {
     };
     //window.close();
     function creationCallback(notId) {
-      console.log("created notification ID:" + notId);
+      //console.log("created notification ID:" + notId);
     }
     chrome.notifications.create("Id Deleted" + notId++, opt, creationCallback);
     //notification;
@@ -145,9 +161,15 @@ function showTabs(tabid, favIcon, tabname, tablink, tabstatus) {
 
 // adds event listenrs to the DOM Contents after load
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector("button").addEventListener("click", clickHandler);
+  document.getElementById("buttonText").addEventListener("click", clickHandler);
+  document
+    .getElementById("buttonJson")
+    .addEventListener("click", clickHandlerJSON);
 });
 
+function clickHandlerJSON(e) {
+  setTimeout(copyJsonToClipboard, 10);
+}
 function clickHandler(e) {
   setTimeout(awesomeTask, 10);
 }
@@ -156,6 +178,17 @@ function awesomeTask() {
 }
 function main() {
   copyToClipboard();
+}
+
+function copyJsonToClipboard() {
+  var objJson = document.getElementById("copyJson");
+  if (objJson) {
+    var tabbJson = document.getElementById("tbListJson");
+    objJson.value = tabbJson.innerText;
+    objJson.select();
+    document.execCommand("copy", false, null);
+    window.close();
+  }
 }
 
 //Trick to copy contents to Clipboard.
@@ -178,6 +211,6 @@ function copyToClipboard() {
     // } else {
     // }
   } else {
-    console.log("data not found");
+    //console.log("data not found");
   }
 }

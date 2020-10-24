@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "OpenedTabs",
   "description": "A simple Tab Manager. This extension Shows, Copy, Reloads, and Closes all Opened tabs in the Google Chrome Window without clicking on going on the tab.",
-  "version": "1.5",
+  "version": "1.6",
   
   "icons": { 
   "48": "icon_48.png" 
