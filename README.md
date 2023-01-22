@@ -1,6 +1,4 @@
-# OpenedTabs 
-`by anaghvj`
-==========
+# OpenedTabs `by AVJLabs`
 ## Introduction
 
 OpenedTabs is a Chrome Extension  which shows the list of all opened tabs in the current Google Chrome Window.
@@ -12,7 +10,6 @@ User can use the copied text from the clipboard for their personel use,save in a
 
 Works well in  Windows,Linux,Mac.
 
-=================
 
 Copied Text Example :
 ```
@@ -29,7 +26,6 @@ URL : https://www.google.co.in/
 
 
 ```
-================
 
 ## Chrome WebStore Link
 -[Webstore Download link](https://chrome.google.com/webstore/detail/openedtabs/hgohfinkmbjghllknbjejeagkmckehif)
